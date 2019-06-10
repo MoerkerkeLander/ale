@@ -230,6 +230,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['reason'],
 \       'description': 'Fix ReasonML files with refmt.',
 \   },
+\   'remark': {
+\       'function': 'ale#fixers#remark#Fix',
+\       'suggested_filetypes': ['markdown'],
+\       'description': 'Fix Markdown files with remark.',
+\   },
 \   'shfmt': {
 \       'function': 'ale#fixers#shfmt#Fix',
 \       'suggested_filetypes': ['sh'],
