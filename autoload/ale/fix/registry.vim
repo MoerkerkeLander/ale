@@ -120,6 +120,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['scala'],
 \       'description': 'Fix Scala files using scalafmt',
 \   },
+\   'sorbet': {
+\       'function': 'ale#fixers#sorbet#Fix',
+\       'suggested_filetypes': ['ruby'],
+\       'description': 'Fix ruby files with srb tc --autocorrect.',
+\   },
 \   'standard': {
 \       'function': 'ale#fixers#standard#Fix',
 \       'suggested_filetypes': ['javascript'],
@@ -149,6 +154,11 @@ let s:default_registry = {
 \       'function': 'ale#fixers#php_cs_fixer#Fix',
 \       'suggested_filetypes': ['php'],
 \       'description': 'Fix PHP files with php-cs-fixer.',
+\   },
+\   'clangtidy': {
+\       'function': 'ale#fixers#clangtidy#Fix',
+\       'suggested_filetypes': ['c', 'cpp', 'objc'],
+\       'description': 'Fix C/C++ and ObjectiveC files with clang-tidy.',
 \   },
 \   'clang-format': {
 \       'function': 'ale#fixers#clangformat#Fix',
@@ -307,7 +317,7 @@ let s:default_registry = {
 \   },
 \   'styler': {
 \       'function': 'ale#fixers#styler#Fix',
-\       'suggested_filetypes': ['r'],
+\       'suggested_filetypes': ['r', 'rmarkdown'],
 \       'description': 'Fix R files with styler.',
 \   },
 \   'latexindent': {
@@ -319,6 +329,11 @@ let s:default_registry = {
 \       'function': 'ale#fixers#pgformatter#Fix',
 \       'suggested_filetypes': ['sql'],
 \       'description': 'A PostgreSQL SQL syntax beautifier',
+\   },
+\   'reorder-python-imports': {
+\       'function': 'ale#fixers#reorder_python_imports#Fix',
+\       'suggested_filetypes': ['python'],
+\       'description': 'Sort Python imports with reorder-python-imports.',
 \   },
 \}
 

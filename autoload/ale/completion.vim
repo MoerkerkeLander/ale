@@ -52,6 +52,7 @@ let s:should_complete_map = {
 \   'lisp': s:lisp_regex,
 \   'typescript': '\v[a-zA-Z$_][a-zA-Z$_0-9]*$|\.$|''$|"$',
 \   'rust': '\v[a-zA-Z$_][a-zA-Z$_0-9]*$|\.$|::$',
+\   'cpp': '\v[a-zA-Z$_][a-zA-Z$_0-9]*$|\.$|::$|-\>$',
 \}
 
 " Regular expressions for finding the start column to replace with completion.
@@ -59,11 +60,13 @@ let s:omni_start_map = {
 \   '<default>': '\v[a-zA-Z$_][a-zA-Z$_0-9]*$',
 \}
 
-" A map of exact characters for triggering LSP completions.
+" A map of exact characters for triggering LSP completions. Do not forget to
+" update self.input_patterns in ale.py in updating entries in this map.
 let s:trigger_character_map = {
 \   '<default>': ['.'],
 \   'typescript': ['.', '''', '"'],
 \   'rust': ['.', '::'],
+\   'cpp': ['.', '::', '->'],
 \}
 
 function! s:GetFiletypeValue(map, filetype) abort
@@ -213,6 +216,10 @@ function! ale#completion#GetCompletionPosition() abort
     let l:match = matchstr(l:up_to_column, l:regex)
 
     return l:column - len(l:match) - 1
+endfunction
+
+function! ale#completion#GetCompletionPositionForDeoplete(input) abort
+    return match(a:input, '\k*$')
 endfunction
 
 function! ale#completion#GetCompletionResult() abort
