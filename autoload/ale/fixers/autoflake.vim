@@ -6,7 +6,6 @@ call ale#Set('python_autoflake_use_global', get(g:, 'ale_use_global_executables'
 call ale#Set('python_autoflake_options', '-s')
 
 function! ale#fixers#autoflake#Fix(buffer) abort
-
     let l:executable = ale#python#FindExecutable(
     \   a:buffer,
     \   'python_autoflake',
@@ -24,5 +23,4 @@ function! ale#fixers#autoflake#Fix(buffer) abort
     \       . (!empty(l:options) ? ' ' . l:options : '')
     \       . ' -',
     \}
-
 endfunction
