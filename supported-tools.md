@@ -52,6 +52,8 @@ formatting.
   * [shfmt](https://github.com/mvdan/sh)
 * Bats
   * [shellcheck](https://www.shellcheck.net/)
+* Bazel
+  * [buildifier](https://github.com/bazelbuild/buildtools)
 * BibTeX
   * [bibclean](http://ftp.math.utah.edu/pub/bibclean/)
 * Bourne Shell
@@ -157,8 +159,10 @@ formatting.
   * [ruumba](https://github.com/ericqweinstein/ruumba)
 * Erlang
   * [SyntaxErl](https://github.com/ten0s/syntaxerl)
+  * [dialyzer](http://erlang.org/doc/man/dialyzer.html)
   * [elvis](https://github.com/inaka/elvis) :floppy_disk:
   * [erlc](http://erlang.org/doc/man/erlc.html)
+  * [erlfmt](https://github.com/WhatsApp/erlfmt)
 * Fish
   * fish [-n flag](https://linux.die.net/man/1/fish)
   * [fish_indent](https://fishshell.com/docs/current/cmds/fish_indent.html)

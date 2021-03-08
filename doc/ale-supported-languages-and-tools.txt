@@ -43,6 +43,8 @@ Notes:
   * `shfmt`
 * Bats
   * `shellcheck`
+* Bazel
+  * `buildifier`
 * BibTeX
   * `bibclean`
 * Bourne Shell
@@ -148,8 +150,10 @@ Notes:
   * `ruumba`
 * Erlang
   * `SyntaxErl`
+  * `dialyzer`
   * `elvis`!!
   * `erlc`
+  * `erlfmt`
 * Fish
   * `fish` (-n flag)
   * `fish_indent`
